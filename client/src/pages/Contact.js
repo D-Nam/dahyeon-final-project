@@ -26,7 +26,7 @@ const Contact = () => {
         </GithubDiv>
 
         <LinkedInDiv>
-          <Link to=''>
+          <Link to='https://www.linkedin.com/in/dahyeon-nam'>
             <LinkedInIcon size={'3rem'} />
           </Link>
         </LinkedInDiv>

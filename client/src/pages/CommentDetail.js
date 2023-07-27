@@ -67,7 +67,6 @@ const CommentDetail = () => {
     })
       .then((res) => res.json())
       .then((parsed) => {
-        console.log(parsed);
         window.alert(parsed.message);
         navigate(`/newLyrics/${songId}/${addedLyricsId}`);
       })

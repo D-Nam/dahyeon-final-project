@@ -168,11 +168,16 @@ const LanguageDiv = styled.div`
 `;
 
 const LanguageBox = styled.div`
+  overflow: visible;
+  overflow-wrap: anywhere;
+  box-sizing: border-box;
+  width: auto;
+  height: auto;
   border-width: 4px;
   border-style: solid;
   border-color: #e59b8a;
   border-radius: 10px;
-  padding: 5px 20px;
+  padding: 15px 20px;
   background-color: white;
 `;
 
@@ -181,6 +186,11 @@ const LyricsDiv = styled.div`
 `;
 
 const LyricsBox = styled.div`
+  overflow: visible;
+  overflow-wrap: anywhere;
+  box-sizing: border-box;
+  width: auto;
+  height: auto;
   border-width: 4px;
   border-style: solid;
   border-color: #e59b8a;

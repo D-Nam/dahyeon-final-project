@@ -67,18 +67,18 @@ const EditLyrics = () => {
           <h1>- Edit your Lyrics -</h1>
           <div>
             <form onSubmit={handleSubmit}>
-              <InputsDiv>
+              <TextareaDiv>
                 <Label>
                   What language are you going to translate this song into?
                 </Label>
-                <Input
+                <LanguageTextarea
                   type='text'
                   id='language'
                   value={inputs.language}
                   onChange={handleChange}
                 />
-              </InputsDiv>
-              <InputsDiv>
+              </TextareaDiv>
+              <TextareaDiv>
                 <Label>Please write translated lyrics.</Label>
                 <Textarea
                   type='text'
@@ -86,7 +86,7 @@ const EditLyrics = () => {
                   value={inputs.lyrics}
                   onChange={handleChange}
                 ></Textarea>
-              </InputsDiv>
+              </TextareaDiv>
               {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
               <Button type='submit'>Edit post</Button>
             </form>
@@ -100,12 +100,12 @@ const EditLyrics = () => {
 export default EditLyrics;
 
 const Background = styled.div`
-  position: relative;
   background: #e0ffff;
   background-size: cover;
   background-position: center;
   height: 100vh;
   width: 100%;
+  overflow: auto;
 `;
 
 const FormDiv = styled.div`
@@ -114,14 +114,12 @@ const FormDiv = styled.div`
   align-items: center;
   text-align: center;
   flex-direction: column;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   margin-top: 30px;
+  margin-top: 80px;
+  margin-bottom: 50px;
 `;
 
-const InputsDiv = styled.div`
+const TextareaDiv = styled.div`
   text-align: start;
   display: flex;
   flex-direction: column;
@@ -133,14 +131,15 @@ const Label = styled.label`
   font-size: 20px;
 `;
 
-const Input = styled.input`
-  height: 30px;
+const LanguageTextarea = styled.textarea`
   font-size: 20px;
+  padding: 5px 15px;
 `;
 
 const Textarea = styled.textarea`
   height: 350px;
   font-size: 20px;
+  padding: 5px 15px;
 `;
 
 const ErrorMessage = styled.div`

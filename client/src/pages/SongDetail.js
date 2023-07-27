@@ -196,7 +196,8 @@ const LyricsWrapper = styled.div`
 `;
 
 const EachDiv = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 5% 70% 2%;
   align-items: center;
   position: relative;
   padding: 20px;
@@ -209,11 +210,14 @@ const EachDiv = styled.div`
 `;
 
 const OrderDiv = styled.div`
-  margin-right: 30px;
+  /* margin-right: 30px; */
 `;
 
 const LanguageDiv = styled.div`
-  margin-right: 20px;
+  width: 300px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 `;
 
 const UserIdDiv = styled.div`
