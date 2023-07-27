@@ -13,29 +13,33 @@ const { getLyrics } = require('./handlers/getLyrics');
 const { myPage } = require('./handlers/myPage');
 const { signInUser } = require('./handlers/signInUser');
 
-router.get('/searchSongs/:songId', getAllLyrics);
-router.get('/newLyrics/:songId/:addedLyricsId', getLyrics);
-router.get('/newLyrics/:songId/:addedLyricsId/comment', getComment);
+router.get('/', (req, res) => {
+  res.status(200).json({ status: 200, success: true });
+});
+
+router.get('/api/searchSongs/:songId', getAllLyrics);
+router.get('/api/newLyrics/:songId/:addedLyricsId', getLyrics);
+router.get('/api/newLyrics/:songId/:addedLyricsId/comment', getComment);
 router.get(
-  '/newLyrics/:songId/:addedLyricsId/comment/:addedCommentId',
+  '/api/newLyrics/:songId/:addedLyricsId/comment/:addedCommentId',
   getEachComment
 );
-router.get('/myPage/:signedInUser_id', myPage);
+router.get('/api/myPage/:signedInUser_id', myPage);
 
-router.post('/signup', createUser);
-router.post('/signin', signInUser);
-router.post('/addLyrics/:songId', addLyrics);
-router.post('/newLyrics/:songId/:addedLyricsId/comment', createComment);
+router.post('/api/signup', createUser);
+router.post('/api/signin', signInUser);
+router.post('/api/addLyrics/:songId', addLyrics);
+router.post('/api/newLyrics/:songId/:addedLyricsId/comment', createComment);
 
-router.patch('/newLyrics/:songId/:addedLyricsId/edit', editLyrics);
+router.patch('/api/newLyrics/:songId/:addedLyricsId/edit', editLyrics);
 router.patch(
-  '/newLyrics/:songId/:addedLyricsId/comment/:addedCommentId/edit',
+  '/api/newLyrics/:songId/:addedLyricsId/comment/:addedCommentId/edit',
   editEachComment
 );
 
-router.delete('/newLyrics/:songId/:addedLyricsId/delete', deleteLyrics);
+router.delete('/api/newLyrics/:songId/:addedLyricsId/delete', deleteLyrics);
 router.delete(
-  '/newLyrics/:songId/:addedLyricsId/:addedCommentId/delete',
+  '/api/newLyrics/:songId/:addedLyricsId/:addedCommentId/delete',
   deleteComment
 );
 
