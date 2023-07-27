@@ -12,7 +12,9 @@ const ShowLyricsPost = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`/newLyrics/${songId}/${addedLyricsId}`)
+    fetch(
+      `https://the-lyrics-world.onrender.com/newLyrics/${songId}/${addedLyricsId}`
+    )
       .then((res) => res.json())
       .then((parsed) => {
         if (parsed.data.lyrics) {
@@ -27,13 +29,16 @@ const ShowLyricsPost = () => {
   }, []);
 
   const handleDeleteLyrics = () => {
-    fetch(`/newLyrics/${songId}/${addedLyricsId}/delete`, {
-      method: 'DELETE',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-    })
+    fetch(
+      `https://the-lyrics-world.onrender.com/newLyrics/${songId}/${addedLyricsId}/delete`,
+      {
+        method: 'DELETE',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+      }
+    )
       .then((res) => res.json())
       .then((parsed) => {
         window.alert(parsed.message);

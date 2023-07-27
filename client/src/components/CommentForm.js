@@ -25,14 +25,17 @@ const CommentForm = () => {
       date,
     };
 
-    fetch(`/newLyrics/${songId}/${addedLyricsId}/comment`, {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
-    })
+    fetch(
+      `https://the-lyrics-world.onrender.com/newLyrics/${songId}/${addedLyricsId}/comment`,
+      {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+      }
+    )
       .then((res) => res.json())
       .then((parsed) => {
         if (parsed.status === 400) {

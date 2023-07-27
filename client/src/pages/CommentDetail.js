@@ -12,7 +12,9 @@ const CommentDetail = () => {
   const date = moment(currentDate).format('YYYY/MM/DD hh:mm:ss A');
 
   useEffect(() => {
-    fetch(`/newLyrics/${songId}/${addedLyricsId}/comment/${addedCommentId}`)
+    fetch(
+      `https://the-lyrics-world.onrender.com/newLyrics/${songId}/${addedLyricsId}/comment/${addedCommentId}`
+    )
       .then((res) => res.json())
       .then((parsed) => {
         setTextValue({ textValue: parsed.data.textValue });
@@ -29,7 +31,7 @@ const CommentDetail = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch(
-      `/newLyrics/${songId}/${addedLyricsId}/comment/${addedCommentId}/edit`,
+      `https://the-lyrics-world.onrender.com/newLyrics/${songId}/${addedLyricsId}/comment/${addedCommentId}/edit`,
       {
         headers: {
           Accept: 'application/json',
@@ -58,13 +60,16 @@ const CommentDetail = () => {
   };
 
   const handleDeleteComment = () => {
-    fetch(`/newLyrics/${songId}/${addedLyricsId}/${addedCommentId}/delete`, {
-      method: 'DELETE',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-    })
+    fetch(
+      `https://the-lyrics-world.onrender.com/newLyrics/${songId}/${addedLyricsId}/${addedCommentId}/delete`,
+      {
+        method: 'DELETE',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+      }
+    )
       .then((res) => res.json())
       .then((parsed) => {
         window.alert(parsed.message);

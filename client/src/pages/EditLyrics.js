@@ -19,19 +19,22 @@ const EditLyrics = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`/newLyrics/${songId}/${addedLyricsId}/edit`, {
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      method: 'PATCH',
+    fetch(
+      `https://the-lyrics-world.onrender.com/newLyrics/${songId}/${addedLyricsId}/edit`,
+      {
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        method: 'PATCH',
 
-      body: JSON.stringify({
-        language,
-        lyrics,
-        signedInUser_id,
-      }),
-    })
+        body: JSON.stringify({
+          language,
+          lyrics,
+          signedInUser_id,
+        }),
+      }
+    )
       .then((res) => res.json())
       .then((parsed) => {
         if (parsed.status === 400) {
@@ -47,7 +50,9 @@ const EditLyrics = () => {
   };
 
   useEffect(() => {
-    fetch(`/newLyrics/${songId}/${addedLyricsId}`)
+    fetch(
+      `https://the-lyrics-world.onrender.com/newLyrics/${songId}/${addedLyricsId}`
+    )
       .then((res) => res.json())
       .then((parsed) => {
         setInputs({

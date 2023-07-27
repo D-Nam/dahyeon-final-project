@@ -10,7 +10,9 @@ const ShowComments = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`/newLyrics/${songId}/${addedLyricsId}/comment`)
+    fetch(
+      `https://the-lyrics-world.onrender.com/newLyrics/${songId}/${addedLyricsId}/comment`
+    )
       .then((res) => res.json())
       .then((parsed) => {
         if (parsed.data) {
