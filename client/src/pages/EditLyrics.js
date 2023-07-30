@@ -20,7 +20,7 @@ const EditLyrics = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch(
-      `https://the-lyrics-world.onrender.com/newLyrics/${songId}/${addedLyricsId}/edit`,
+      `https://the-lyrics-world.onrender.com/api/newLyrics/${songId}/${addedLyricsId}/edit`,
       {
         headers: {
           Accept: 'application/json',
@@ -51,7 +51,7 @@ const EditLyrics = () => {
 
   useEffect(() => {
     fetch(
-      `https://the-lyrics-world.onrender.com/newLyrics/${songId}/${addedLyricsId}`
+      `https://the-lyrics-world.onrender.com/api/newLyrics/${songId}/${addedLyricsId}`
     )
       .then((res) => res.json())
       .then((parsed) => {

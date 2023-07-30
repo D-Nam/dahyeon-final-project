@@ -25,7 +25,7 @@ const SignIn = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch('https://the-lyrics-world.onrender.com/signin', {
+    fetch('https://the-lyrics-world.onrender.com/api/signin', {
       method: 'POST',
       headers: {
         Accept: 'application/json',

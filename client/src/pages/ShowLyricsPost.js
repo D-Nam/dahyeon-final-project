@@ -13,7 +13,7 @@ const ShowLyricsPost = () => {
 
   useEffect(() => {
     fetch(
-      `https://the-lyrics-world.onrender.com/newLyrics/${songId}/${addedLyricsId}`
+      `https://the-lyrics-world.onrender.com/api/newLyrics/${songId}/${addedLyricsId}`
     )
       .then((res) => res.json())
       .then((parsed) => {
@@ -30,7 +30,7 @@ const ShowLyricsPost = () => {
 
   const handleDeleteLyrics = () => {
     fetch(
-      `https://the-lyrics-world.onrender.com/newLyrics/${songId}/${addedLyricsId}/delete`,
+      `https://the-lyrics-world.onrender.com/api/newLyrics/${songId}/${addedLyricsId}/delete`,
       {
         method: 'DELETE',
         headers: {

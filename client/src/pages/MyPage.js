@@ -9,7 +9,9 @@ const MyPage = () => {
   const [lyricsArray, setLyricsArray] = useState([]);
 
   useEffect(() => {
-    fetch(`https://the-lyrics-world.onrender.com/myPage/${signedInUser_id._id}`)
+    fetch(
+      `https://the-lyrics-world.onrender.com/api/myPage/${signedInUser_id._id}`
+    )
       .then((res) => res.json())
       .then((parsed) => {
         if (parsed.data) {
@@ -25,7 +27,7 @@ const MyPage = () => {
 
   const handleDeleteLyrics = (songId, addedLyricsId) => {
     fetch(
-      `https://the-lyrics-world.onrender.com/newLyrics/${songId}/${addedLyricsId}/delete`,
+      `https://the-lyrics-world.onrender.com/api/newLyrics/${songId}/${addedLyricsId}/delete`,
       {
         method: 'DELETE',
         headers: {

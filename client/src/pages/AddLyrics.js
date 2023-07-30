@@ -26,7 +26,7 @@ const AddLyrics = () => {
       lyrics,
     };
 
-    fetch(`https://the-lyrics-world.onrender.com/addLyrics/${songId}`, {
+    fetch(`https://the-lyrics-world.onrender.com/api/addLyrics/${songId}`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',

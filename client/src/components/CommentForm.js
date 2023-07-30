@@ -26,7 +26,7 @@ const CommentForm = () => {
     };
 
     fetch(
-      `https://the-lyrics-world.onrender.com/newLyrics/${songId}/${addedLyricsId}/comment`,
+      `https://the-lyrics-world.onrender.com/api/newLyrics/${songId}/${addedLyricsId}/comment`,
       {
         method: 'POST',
         headers: {

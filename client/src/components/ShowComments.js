@@ -11,7 +11,7 @@ const ShowComments = () => {
 
   useEffect(() => {
     fetch(
-      `https://the-lyrics-world.onrender.com/newLyrics/${songId}/${addedLyricsId}/comment`
+      `https://the-lyrics-world.onrender.com/api/newLyrics/${songId}/${addedLyricsId}/comment`
     )
       .then((res) => res.json())
       .then((parsed) => {

@@ -13,7 +13,7 @@ const CommentDetail = () => {
 
   useEffect(() => {
     fetch(
-      `https://the-lyrics-world.onrender.com/newLyrics/${songId}/${addedLyricsId}/comment/${addedCommentId}`
+      `https://the-lyrics-world.onrender.com/api/newLyrics/${songId}/${addedLyricsId}/comment/${addedCommentId}`
     )
       .then((res) => res.json())
       .then((parsed) => {
@@ -31,7 +31,7 @@ const CommentDetail = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch(
-      `https://the-lyrics-world.onrender.com/newLyrics/${songId}/${addedLyricsId}/comment/${addedCommentId}/edit`,
+      `https://the-lyrics-world.onrender.com/api/newLyrics/${songId}/${addedLyricsId}/comment/${addedCommentId}/edit`,
       {
         headers: {
           Accept: 'application/json',
@@ -61,7 +61,7 @@ const CommentDetail = () => {
 
   const handleDeleteComment = () => {
     fetch(
-      `https://the-lyrics-world.onrender.com/newLyrics/${songId}/${addedLyricsId}/${addedCommentId}/delete`,
+      `https://the-lyrics-world.onrender.com/api/newLyrics/${songId}/${addedLyricsId}/${addedCommentId}/delete`,
       {
         method: 'DELETE',
         headers: {

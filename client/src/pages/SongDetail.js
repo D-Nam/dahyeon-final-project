@@ -32,7 +32,7 @@ const SongDetail = () => {
   };
 
   const getAllLyrics = () => {
-    fetch(`https://the-lyrics-world.onrender.com/searchSongs/${songId}`)
+    fetch(`https://the-lyrics-world.onrender.com/api/searchSongs/${songId}`)
       .then((res) => res.json())
       .then((parsed) => {
         if (parsed.data) {
