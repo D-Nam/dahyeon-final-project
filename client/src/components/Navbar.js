@@ -2,6 +2,8 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../context/UserContext';
 import { BiSolidUserCircle } from 'react-icons/bi';
+import { BiMenu } from 'react-icons/bi';
+
 import styled from 'styled-components';
 
 const Navbar = () => {
@@ -29,6 +31,7 @@ const Navbar = () => {
               </Div>
             </Logo>
           </LogoLink>
+
           <NavUl>
             <li>
               <NavbarLink to='/'>Home</NavbarLink>
@@ -55,12 +58,15 @@ const Navbar = () => {
                 </SignInUpOutLink>
               </GreetUser>
             ) : (
-              <div>
+              <AccountDiv>
                 <SignInUpOutLink to='/signIn'>Sign in</SignInUpOutLink>
                 <SignInUpOutLink to='/signUp'>Sign up</SignInUpOutLink>
-              </div>
+              </AccountDiv>
             )}
           </SignInDiv>
+          <MenuBtn>
+            <MenuIcon size={'2rem'} />
+          </MenuBtn>
         </NavbarContainer>
       </Nav>
     </>
@@ -72,10 +78,21 @@ export default Navbar;
 const Nav = styled.div`
   position: fixed;
   background-color: #988c87;
-  height: 70px;
-  top: 0px;
+
+  height: 40px;
   width: 100%;
+  top: 0px;
   z-index: 900;
+
+  @media screen and (min-width: 425px) {
+    height: 55px;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 768px) {
+    height: 70px;
+    width: 100%;
+  }
 `;
 
 const NavbarContainer = styled.div`
@@ -83,20 +100,41 @@ const NavbarContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  top: 0px;
-  height: 70px;
+  height: 40px;
   font-size: 20px;
+
+  @media screen and (min-width: 425px) {
+    height: 55px;
+  }
+
+  @media screen and (min-width: 768px) {
+    height: 70px;
+  }
 `;
 
 const Logo = styled.div`
-  margin-left: 30px;
-  height: 60px;
+  font-size: 5px;
+  height: 30px;
+  margin-left: 20px;
   font-family: Arial Black;
+
+  @media screen and (min-width: 425px) {
+    font-size: 13px;
+    height: 50px;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 17px;
+
+    margin-left: 30px;
+    height: 60px;
+  }
 `;
 
 const Logo1 = styled.div`
   text-align: center;
-  font-size: 17px;
   color: black;
 `;
 
@@ -122,9 +160,13 @@ const LogoLink = styled(NavLink)`
 `;
 
 const NavUl = styled.ul`
-  display: flex;
-  align-items: center;
-  list-style: none;
+  display: none;
+
+  @media screen and (min-width: 769px) {
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
 `;
 
 const NavbarLink = styled(NavLink)`
@@ -159,6 +201,14 @@ const GreetUser = styled.div`
   align-items: center;
 `;
 
+const AccountDiv = styled.div`
+  display: none;
+
+  @media screen and (min-width: 769px) {
+    display: block;
+  }
+`;
+
 const SignInUpOutLink = styled(NavLink)`
   color: white;
   text-decoration: none;
@@ -181,5 +231,26 @@ const UserIcon = styled(BiSolidUserCircle)`
 
   &:hover {
     color: #514f4f;
+  }
+`;
+
+const MenuBtn = styled.button`
+  display: block;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-right: 15px;
+
+  @media screen and (min-width: 769px) {
+    display: none;
+  }
+`;
+
+const MenuIcon = styled(BiMenu)`
+  display: block;
+  color: white;
+
+  @media screen and (min-width: 769px) {
+    display: none;
   }
 `;

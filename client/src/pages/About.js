@@ -46,9 +46,18 @@ const Container = styled.div`
 const Image = styled.img`
   background-size: cover;
   background-position: center;
-  height: 100vh;
   width: 100%;
-  overflow: auto;
+  height: 100vh;
+
+  @media screen and (min-width: 425px) {
+    width: 690px;
+    height: 1000px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 100%;
+    height: 1000px;
+  }
 `;
 
 const TextWrapper = styled.div`
@@ -63,6 +72,11 @@ const TextWrapper = styled.div`
 const Greeting = styled.div`
   font-weight: bold;
   font-size: 50px;
+
+  @media screen and (max-width: 425px) {
+    text-align: center;
+    font-size: 15px;
+  }
 `;
 
 const AboutDiv = styled.div`
@@ -71,12 +85,20 @@ const AboutDiv = styled.div`
 
 const EachDiv = styled.div`
   margin-bottom: 30px;
+
+  @media screen and (max-width: 425px) {
+    margin-bottom: 20px;
+  }
 `;
 
 const Header = styled.div`
   font-weight: bold;
   font-size: 25px;
   margin-bottom: 10px;
+
+  @media screen and (max-width: 425px) {
+    font-size: 13px;
+  }
 `;
 
 const Content = styled.div`
@@ -87,4 +109,10 @@ const Content = styled.div`
   color: black;
   font-size: 20px;
   font-weight: bold;
+
+  @media screen and (max-width: 425px) {
+    padding: 5px 5px;
+    font-size: 10px;
+    width: 80%;
+  }
 `;
