@@ -108,25 +108,38 @@ const SignInFormDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 400px;
-  width: 450px;
+  height: 330px;
+  width: 330px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  @media screen and (min-width: 426px) {
+    height: 400px;
+    width: 450px;
+  }
 `;
 
 const GreetingMsgDiv = styled.div`
   flex-direction: column;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
   text-align: center;
   color: #e1d8d6;
+
+  @media screen and (min-width: 426px) {
+    font-size: 25px;
+  }
 `;
 
 const FillTheFormMsg = styled.p`
-  font-size: 15px;
+  font-size: 13px;
   color: white;
+
+  @media screen and (min-width: 426px) {
+    font-size: 15px;
+  }
 `;
 
 const Form = styled.form`
@@ -139,29 +152,41 @@ const Form = styled.form`
 const ErrorMessage = styled.div`
   width: 300px;
   color: red;
-  font-size: 20px;
-  margin: 0px;
+  text-align: center;
+  font-size: 15px;
+
+  @media screen and (min-width: 426px) {
+    width: 300px;
+    font-size: 20px;
+  }
 `;
 
 const Input = styled.input`
-  width: 300px;
-  height: 30px;
+  width: 260px;
+  height: 25px;
   border: none;
   border-radius: 8px;
   text-align: center;
   font-size: 20px;
-  margin-top: 20px;
+  font-size: 18px;
+  margin-top: 18px;
 
   &:focus {
-    outline: 5px solid #e9967a;
+    outline: 4px solid #e9967a;
+  }
+
+  @media screen and (min-width: 426px) {
+    width: 300px;
+    height: 30px;
+    margin-top: 20px;
   }
 `;
 
 const Button = styled.button`
-  font-size: 20px;
-  width: 100px;
-  height: 30px;
-  margin-top: 40px;
+  font-size: 15px;
+  width: 80px;
+  height: 25px;
+  margin-top: 25px;
   border: 2px solid white;
   border-radius: 20px;
   background-color: #add8e6;
@@ -169,6 +194,12 @@ const Button = styled.button`
   &:hover {
     cursor: pointer;
     transform: scale(1.1);
+  }
+
+  @media screen and (min-width: 426px) {
+    font-size: 20px;
+    width: 100px;
+    height: 30px;
   }
 `;
 

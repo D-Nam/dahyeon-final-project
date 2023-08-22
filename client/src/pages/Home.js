@@ -36,20 +36,24 @@ const MessageDiv = styled.div`
   transform: translate(-50%, -50%);
   background: rgba(95, 88, 85, 0.96);
   border-radius: 30px;
-  padding: 100px;
+  padding: 50px;
+
+  @media screen and (min-width: 768px) {
+    padding: 70px;
+  }
 `;
 
-const Message = styled.p`
+const Message = styled.div`
   font-family: monospace;
   color: #ffffff;
   text-shadow: 3px 3px black;
   position: relative;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bold;
   animation-name: mymove;
   animation-duration: 1.5s;
   animation-timing-function: linear;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 
   @keyframes mymove {
     from {
@@ -64,6 +68,10 @@ const Message = styled.p`
     100% {
       opacity: 1;
     }
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 35px;
   }
 `;
 

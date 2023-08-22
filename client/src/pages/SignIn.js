@@ -109,25 +109,38 @@ const SignInFormDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 400px;
-  width: 450px;
+  height: 330px;
+  width: 330px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  @media screen and (min-width: 426px) {
+    height: 400px;
+    width: 450px;
+  }
 `;
 
 const GreetingMsgDiv = styled.div`
   flex-direction: column;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
-  margin-top: 0px;
+  margin-top: 10px;
   text-align: center;
+
+  @media screen and (min-width: 426px) {
+    font-size: 30px;
+  }
 `;
 
 const GoodToSeeYouMsg = styled.p`
   color: white;
-  font-size: 20px;
+  font-size: 15px;
+
+  @media screen and (min-width: 426px) {
+    font-size: 20px;
+  }
 `;
 
 const Form = styled.form`
@@ -138,31 +151,42 @@ const Form = styled.form`
 `;
 
 const ErrorMessage = styled.div`
-  width: 300px;
+  width: 250px;
+  text-align: center;
   color: red;
-  font-size: 20px;
-  margin: 0px;
+  font-size: 15px;
+
+  @media screen and (min-width: 426px) {
+    width: 300px;
+    font-size: 20px;
+  }
 `;
 
 const Input = styled.input`
-  width: 300px;
-  height: 30px;
+  width: 260px;
+  height: 25px;
   border: none;
   border-radius: 8px;
   text-align: center;
-  font-size: 20px;
-  margin-top: 20px;
+  margin-top: 18px;
 
   &:focus {
-    outline: 5px solid #e9967a;
+    outline: 4px solid #e9967a;
+  }
+
+  @media screen and (min-width: 426px) {
+    width: 300px;
+    height: 30px;
+    font-size: 20px;
+    margin-top: 20px;
   }
 `;
 
 const Button = styled.button`
-  font-size: 20px;
-  width: 100px;
-  height: 30px;
-  margin-top: 40px;
+  font-size: 15px;
+  width: 80px;
+  height: 25px;
+  margin-top: 25px;
   margin-bottom: 40px;
   border: 2px solid white;
   border-radius: 20px;
@@ -172,14 +196,29 @@ const Button = styled.button`
     cursor: pointer;
     transform: scale(1.1);
   }
+
+  @media screen and (min-width: 426px) {
+    font-size: 20px;
+    width: 100px;
+    height: 30px;
+  }
 `;
 
-const SignUpMessage = styled.p`
+const SignUpMessage = styled.div`
   position: absolute;
-  top: 80%;
-  left: 50%;
+
+  top: 83%;
+  left: 54%;
   transform: translate(-50%, -50%);
-  font-size: 17px;
+
+  @media screen and (min-width: 426px) {
+    top: 88%;
+    left: 50%;
+  }
+
+  @media screen and (min-width: 1400px) {
+    top: 82%;
+  }
 `;
 
 const LinkToSignUp = styled(Link)`

@@ -78,8 +78,7 @@ export default Navbar;
 const Nav = styled.div`
   position: fixed;
   background-color: #988c87;
-
-  height: 40px;
+  height: 50px;
   width: 100%;
   top: 0px;
   z-index: 900;
@@ -100,7 +99,7 @@ const NavbarContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 40px;
+  height: 50px;
   font-size: 20px;
 
   @media screen and (min-width: 425px) {
