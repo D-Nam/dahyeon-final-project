@@ -206,8 +206,7 @@ const Button = styled.button`
 
 const SignUpMessage = styled.div`
   position: absolute;
-
-  top: 83%;
+  top: 87%;
   left: 54%;
   transform: translate(-50%, -50%);
 

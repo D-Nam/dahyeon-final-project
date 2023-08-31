@@ -112,8 +112,8 @@ const NavbarContainer = styled.div`
 `;
 
 const Logo = styled.div`
-  font-size: 5px;
-  height: 30px;
+  font-size: 13px;
+  /* height: 30px; */
   margin-left: 20px;
   font-family: Arial Black;
 
@@ -126,7 +126,6 @@ const Logo = styled.div`
 
   @media screen and (min-width: 768px) {
     font-size: 17px;
-
     margin-left: 30px;
     height: 60px;
   }
