@@ -52,7 +52,7 @@ const AddLyrics = () => {
     <>
       <Background>
         <FormDiv>
-          <h1>- Add your Lyrics -</h1>
+          <Header>- Add your Lyrics -</Header>
           <div>
             <form onSubmit={handleSubmit}>
               <TextareaDiv>
@@ -102,8 +102,16 @@ const FormDiv = styled.div`
   align-items: center;
   text-align: center;
   flex-direction: column;
-  margin-top: 80px;
-  margin-bottom: 50px;
+  margin: 80px 10px 50px 10px;
+`;
+
+const Header = styled.p`
+  font-weight: bold;
+  font-size: 20px;
+
+  @media screen and (min-width: 426px) {
+    font-size: 30px;
+  }
 `;
 
 const TextareaDiv = styled.div`
@@ -115,18 +123,32 @@ const TextareaDiv = styled.div`
 
 const Label = styled.label`
   margin-bottom: 10px;
-  font-size: 20px;
+  font-size: 15px;
+
+  @media screen and (min-width: 426px) {
+    font-size: 20px;
+  }
 `;
 
 const LanguageTextarea = styled.textarea`
-  font-size: 20px;
+  font-size: 15px;
   padding: 5px 15px;
+
+  @media screen and (min-width: 426px) {
+    font-size: 20px;
+    padding: 5px 15px;
+  }
 `;
 
 const Textarea = styled.textarea`
   height: 350px;
-  font-size: 20px;
+  font-size: 15px;
   padding: 5px 15px;
+
+  @media screen and (min-width: 426px) {
+    font-size: 20px;
+    padding: 5px 15px;
+  }
 `;
 
 const ErrorMessage = styled.div`
@@ -136,9 +158,8 @@ const ErrorMessage = styled.div`
 `;
 
 const Button = styled.button`
-  font-size: 20px;
+  font-size: 15px;
   color: white;
-  border: none;
   border: none;
   border-radius: 20px;
   background-color: #66cdaa;
@@ -147,5 +168,9 @@ const Button = styled.button`
   &:hover {
     cursor: pointer;
     transform: scale(1.1);
+  }
+
+  @media screen and (min-width: 426px) {
+    font-size: 20px;
   }
 `;

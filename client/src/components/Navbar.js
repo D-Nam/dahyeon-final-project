@@ -174,7 +174,7 @@ const NavbarLink = styled(NavLink)`
   align-items: center;
   height: 100%;
   text-decoration: none;
-  margin-right: 50px;
+  margin: 20px;
 
   &:hover {
     color: white;
@@ -195,9 +195,14 @@ const SignInDiv = styled.div`
 `;
 
 const GreetUser = styled.div`
-  color: white;
-  display: flex;
-  align-items: center;
+  display: none;
+
+  @media screen and (min-width: 769px) {
+    display: block;
+    color: white;
+    display: flex;
+    align-items: center;
+  }
 `;
 
 const AccountDiv = styled.div`

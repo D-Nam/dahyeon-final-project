@@ -67,8 +67,8 @@ const SongDetail = () => {
                   <AlbumImg src={detail.album.cover} />
                 </ImgDiv>
                 <TextDiv>
-                  <Title>{detail.title}</Title>
-                  <Artist>{detail.artist.name}</Artist>
+                  <Title>- {detail.title}</Title>
+                  <Artist>- {detail.artist.name}</Artist>
                 </TextDiv>
                 <ButtonDiv>
                   <Button onClick={handleButtonClick}>Add your lyrics!</Button>
@@ -89,10 +89,12 @@ const SongDetail = () => {
                           handleEachLyricsClick(songId, info.addedLyricsId)
                         }
                       >
-                        <OrderDiv>{index + 1}.</OrderDiv>
-                        <LanguageDiv>
-                          Language: {info.lyrics[0].language}
-                        </LanguageDiv>
+                        <OrderLanDiv>
+                          <OrderDiv>{index + 1}.</OrderDiv>
+                          <LanguageDiv>
+                            Language: {info.lyrics[0].language}
+                          </LanguageDiv>
+                        </OrderLanDiv>
                         <UserIdDiv>
                           translated by {info.lyrics[0].userId}
                         </UserIdDiv>
@@ -129,47 +131,80 @@ const Background = styled.div`
 `;
 
 const Container = styled.div`
-  flex-direction: column;
   margin: auto;
-  margin-top: 150px;
-  width: 60vw;
+  margin-top: 80px;
+  width: 80vw;
+
+  @media screen and (min-width: 426px) {
+    flex-direction: column;
+    margin-top: 150px;
+    width: 60vw;
+  }
 `;
 
 const SongDetailDiv = styled.div`
-  display: flex;
-  align-items: center;
   position: relative;
+
+  @media screen and (min-width: 426px) {
+    display: flex;
+    align-items: center;
+  }
 `;
 
 const ImgDiv = styled.div`
-  margin-right: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (min-width: 426px) {
+    margin-right: 40px;
+  }
 `;
 
 const AlbumImg = styled.img`
-  width: 200px;
-  height: 200px;
-  border-radius: 25px;
+  width: 110px;
+  height: 110px;
+  border-radius: 20px;
+
+  @media screen and (min-width: 426px) {
+    width: 200px;
+    height: 200px;
+    border-radius: 25px;
+  }
 `;
 
 const TextDiv = styled.div`
-  margin-right: 50px;
+  @media screen and (min-width: 426px) {
+    margin-right: 50px;
+  }
 `;
 
 const Title = styled.p`
   font-weight: bold;
-  font-size: 25px;
+  font-size: 15px;
+
+  @media screen and (min-width: 426px) {
+    font-size: 25px;
+  }
 `;
 
 const Artist = styled.p`
   font-style: italic;
   color: #6d5f5d;
-  font-size: 17px;
+  font-size: 15px;
+
+  @media screen and (min-width: 426px) {
+    font-size: 17px;
+  }
 `;
 
 const ButtonDiv = styled.div`
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+
+  @media screen and (min-width: 426px) {
+    bottom: 10px;
+    right: 10px;
+  }
 `;
 
 const Button = styled.button`
@@ -178,60 +213,102 @@ const Button = styled.button`
   text-decoration: none;
   border: none;
   border-radius: 30px;
-  font-size: 25px;
+  font-size: 14px;
   padding: 5px 20px;
 
   &:hover {
     transform: scale(1.1);
     cursor: pointer;
   }
+
+  @media screen and (min-width: 426px) {
+    font-size: 25px;
+  }
 `;
 
 const LyricsWrapper = styled.div`
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  margin-top: 40px;
+  margin-top: 80px;
   padding: 10px;
   margin-bottom: 40px;
+
+  @media screen and (min-width: 426px) {
+    margin-top: 40px;
+  }
 `;
 
 const EachDiv = styled.div`
-  display: grid;
-  grid-template-columns: 5% 70% 2%;
-  align-items: center;
-  position: relative;
-  padding: 20px;
-  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 
   &:hover {
     background-color: #f3e0de;
     cursor: pointer;
   }
+
+  @media screen and (min-width: 426px) {
+    display: grid;
+    grid-template-columns: 5% 70% 2%;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    font-size: 20px;
+  }
 `;
 
-const OrderDiv = styled.div`
-  /* margin-right: 30px; */
-`;
-
-const LanguageDiv = styled.div`
-  width: 300px;
+const OrderLanDiv = styled.div`
+  width: 230px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  font-size: 20px;
+
+  @media screen and (min-width: 426px) {
+    /* width: 240px; */
+  }
+
+  @media screen and (min-width: 769px) {
+    width: 300px;
+  }
+`;
+
+const OrderDiv = styled.div`
+  margin-right: 5px;
+  display: inline;
+`;
+
+const LanguageDiv = styled.div`
+  display: inline;
+
+  @media screen and (min-width: 426px) {
+    width: 300px;
+  }
 `;
 
 const UserIdDiv = styled.div`
   font-style: italic;
-  font-size: 18px;
+  font-size: 14px;
   color: #66cdaa;
-  position: absolute;
-  right: 20px;
+  margin-left: 15px;
+
+  @media screen and (min-width: 426px) {
+    font-size: 16px;
+    position: absolute;
+    right: 20px;
+  }
+
+  @media screen and (min-width: 769px) {
+    font-size: 18px;
+  }
 `;
 
 const NoResultMsg = styled.div`
   margin-top: 100px;
-  font-size: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-size: 15px;
+  text-align: center;
+
+  @media screen and (min-width: 426px) {
+    font-size: 20px;
+  }
 `;

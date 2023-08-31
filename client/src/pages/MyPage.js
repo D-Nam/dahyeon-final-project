@@ -102,88 +102,132 @@ const Background = styled.div`
 const Container = styled.div`
   flex-direction: column;
   margin: auto;
-  margin-top: 140px;
+  margin-top: 90px;
   margin-bottom: 50px;
-  width: 50vw;
+  width: 70vw;
   font-size: 20px;
+
+  @media screen and (min-width: 426px) {
+    width: 50vw;
+    margin-top: 140px;
+  }
 `;
 
 const UserInfoDiv = styled.div`
   color: white;
   background-color: #e9967a;
   border: 3px solid white;
-  height: 60px;
+  height: 40px;
   display: flex;
   align-items: center;
-  padding-left: 20px;
-  font-size: 25px;
+  padding-left: 10px;
+  font-size: 15px;
   font-weight: bold;
   border-radius: 10px;
+
+  @media screen and (min-width: 426px) {
+    height: 60px;
+    padding-left: 20px;
+    font-size: 25px;
+  }
 `;
 
 const PostWrapper = styled.div`
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   margin-top: 30px;
-  padding: 10px;
   margin-bottom: 40px;
+
+  @media screen and (min-width: 426px) {
+    padding: 10px;
+  }
 `;
 
 const EachDiv = styled.div`
   display: flex;
   align-items: center;
   position: relative;
-  padding: 20px;
-  font-size: 20px;
+  padding: 15px;
+  font-size: 15px;
 
   &:hover {
     background-color: #f3e0de;
   }
+
+  @media screen and (min-width: 426px) {
+    padding: 20px;
+    font-size: 20px;
+  }
 `;
 
 const OrderDiv = styled.div`
-  margin-right: 30px;
+  margin-right: 10px;
+
+  @media screen and (min-width: 426px) {
+    margin-right: 15px;
+  }
+
+  @media screen and (min-width: 769px) {
+    margin-right: 30px;
+  }
 `;
 
 const SongIdDiv = styled.div`
-  margin-right: 20px;
+  @media screen and (min-width: 425px) {
+    margin-right: 30px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-right: 0px;
+  }
 `;
 
 const EditDeleteDiv = styled.div`
-  font-size: 18px;
   color: #66cdaa;
-  position: absolute;
-  right: 20px;
   display: flex;
   align-items: center;
+
+  @media screen and (min-width: 769px) {
+    position: absolute;
+    right: 20px;
+  }
 `;
 
 const LinkToEdit = styled(Link)`
   color: black;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 15px;
   background-color: #ffbf00;
   border-radius: 20px;
   padding: 3px 8px;
-  margin-left: 30px;
 
   &:hover {
     color: white;
+  }
+
+  @media screen and (min-width: 426px) {
+    font-size: 21px;
+    margin-left: 30px;
   }
 `;
 
 const DeleteButton = styled.button`
   color: black;
-  font-size: 20px;
+  font-size: 15px;
   background-color: #ffbf00;
   border: none;
   border-radius: 20px;
   padding: 4.5px 8px;
-  margin-left: 20px;
+  margin-left: 5px;
 
   &:hover {
     color: white;
     cursor: pointer;
+  }
+
+  @media screen and (min-width: 426px) {
+    font-size: 20px;
+    margin-left: 10px;
   }
 `;
 
