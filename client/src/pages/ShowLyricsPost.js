@@ -101,7 +101,7 @@ const ShowLyricsPost = () => {
 export default ShowLyricsPost;
 
 const Background = styled.div`
-  background-color: #e0ffff;
+  background-color: #dcd2cf;
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -112,25 +112,35 @@ const Background = styled.div`
 const LyricsSection = styled.div``;
 
 const Container = styled.div`
-  display: grid;
-  grid-template-columns: 45% 55%;
-  grid-column-gap: 50px;
-  margin: auto;
-  margin-top: 140px;
-  margin-bottom: 50px;
-  width: 75vw;
-  font-size: 20px;
+  margin: 20px;
+  margin-top: 80px;
+
+  @media screen and (min-width: 426px) {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    grid-column-gap: 50px;
+    margin: auto;
+    margin-top: 140px;
+    margin-bottom: 50px;
+    width: 75vw;
+    font-size: 20px;
+  }
 `;
 
 const UserIdDiv = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-style: italic;
-  font-size: 25px;
+  color: black;
+  font-size: 17px;
   font-weight: bold;
-  color: #66cdaa;
-  margin-bottom: 30px;
+  display: flex;
+
+  @media screen and (min-width: 426px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-style: italic;
+    font-size: 25px;
+    margin-bottom: 30px;
+  }
 `;
 
 const EditDeleteDiv = styled.div`
@@ -138,33 +148,42 @@ const EditDeleteDiv = styled.div`
 `;
 
 const LinkToEdit = styled(Link)`
-  color: black;
+  color: white;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: normal;
   font-style: normal;
-  background-color: #ffbf00;
+  background-color: #e59b8a;
   border-radius: 20px;
-  padding: 3px 8px;
+  padding: 10px;
   margin-left: 30px;
 
   &:hover {
-    color: white;
+    color: black;
+  }
+
+  @media screen and (min-width: 426px) {
+    font-size: 20px;
+    padding: 3px 8px;
   }
 `;
 
 const DeleteButton = styled.button`
-  color: black;
-  font-size: 20px;
-  background-color: #ffbf00;
+  color: white;
+  font-size: 15px;
+  background-color: #e59b8a;
   border: none;
   border-radius: 20px;
   padding: 3px 8px;
-  margin-left: 30px;
+  margin-left: 20px;
 
   &:hover {
-    color: white;
+    color: black;
     cursor: pointer;
+  }
+
+  @media screen and (min-width: 426px) {
+    font-size: 20px;
   }
 `;
 

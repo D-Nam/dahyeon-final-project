@@ -105,7 +105,7 @@ const EditLyrics = () => {
 export default EditLyrics;
 
 const Background = styled.div`
-  background: #e0ffff;
+  background: #dcd2cf;
   background-size: cover;
   background-position: center;
   height: 100vh;

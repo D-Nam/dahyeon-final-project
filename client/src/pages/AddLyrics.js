@@ -88,7 +88,7 @@ const AddLyrics = () => {
 export default AddLyrics;
 
 const Background = styled.div`
-  background: #e0ffff;
+  background: #dcd2cf;
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -102,7 +102,7 @@ const FormDiv = styled.div`
   align-items: center;
   text-align: center;
   flex-direction: column;
-  margin: 80px 10px 50px 10px;
+  margin: 80px 30px 50px 30px;
 `;
 
 const Header = styled.p`
@@ -132,22 +132,20 @@ const Label = styled.label`
 
 const LanguageTextarea = styled.textarea`
   font-size: 15px;
-  padding: 5px 15px;
+  padding: 5px 10px;
 
   @media screen and (min-width: 426px) {
     font-size: 20px;
-    padding: 5px 15px;
   }
 `;
 
 const Textarea = styled.textarea`
   height: 350px;
   font-size: 15px;
-  padding: 5px 15px;
+  padding: 5px 10px;
 
   @media screen and (min-width: 426px) {
     font-size: 20px;
-    padding: 5px 15px;
   }
 `;
 

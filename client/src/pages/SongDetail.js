@@ -122,7 +122,7 @@ const LoadingMsg = styled.div`
 `;
 
 const Background = styled.div`
-  background-color: #e0ffff;
+  background-color: #dcd2cf;
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -239,8 +239,7 @@ const LyricsWrapper = styled.div`
 `;
 
 const EachDiv = styled.div`
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px 10px;
 
   &:hover {
     background-color: #f3e0de;
@@ -262,10 +261,10 @@ const OrderLanDiv = styled.div`
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  font-size: 20px;
+  font-size: 15px;
 
   @media screen and (min-width: 426px) {
-    /* width: 240px; */
+    font-size: 20px;
   }
 
   @media screen and (min-width: 769px) {

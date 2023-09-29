@@ -77,7 +77,7 @@ export default Navbar;
 
 const Nav = styled.div`
   position: fixed;
-  background-color: #988c87;
+  background-color: #433e3d;
   height: 50px;
   width: 100%;
   top: 0px;
@@ -113,7 +113,7 @@ const NavbarContainer = styled.div`
 
 const Logo = styled.div`
   font-size: 13px;
-  /* height: 30px; */
+  font-weight: bold;
   margin-left: 20px;
   font-family: Arial Black;
 
@@ -133,7 +133,7 @@ const Logo = styled.div`
 
 const Logo1 = styled.div`
   text-align: center;
-  color: black;
+  color: white;
 `;
 
 const Div = styled.div`
@@ -168,7 +168,7 @@ const NavUl = styled.ul`
 `;
 
 const NavbarLink = styled(NavLink)`
-  color: black;
+  color: #e8dede;
   display: flex;
   align-items: center;
   height: 100%;
@@ -233,7 +233,7 @@ const UserIcon = styled(BiSolidUserCircle)`
   align-items: center;
 
   &:hover {
-    color: #514f4f;
+    color: #e59b8a;
   }
 `;
 

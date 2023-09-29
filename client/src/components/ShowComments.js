@@ -52,7 +52,7 @@ const ShowComments = () => {
                         <EditDeleteButton
                           onClick={() => handleDetailBtn(info.addedCommentId)}
                         >
-                          Edit & Delete
+                          Edit / Delete
                         </EditDeleteButton>
                       </EditDeleteDiv>
                     )}
@@ -125,7 +125,8 @@ const EditDeleteButton = styled.button`
   background-color: white;
 
   &:hover {
-    background-color: #ffbf00;
+    background-color: #e59b8a;
+    color: white;
     cursor: pointer;
   }
 `;

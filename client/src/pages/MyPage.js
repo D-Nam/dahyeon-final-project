@@ -126,7 +126,7 @@ const UserInfoDiv = styled.div`
   border-radius: 10px;
 
   @media screen and (min-width: 426px) {
-    height: 60px;
+    height: 50px;
     padding-left: 20px;
     font-size: 25px;
   }
@@ -194,15 +194,15 @@ const EditDeleteDiv = styled.div`
 `;
 
 const LinkToEdit = styled(Link)`
-  color: black;
+  color: white;
   text-decoration: none;
   font-size: 15px;
-  background-color: #ffbf00;
+  background-color: #e59b8a;
   border-radius: 20px;
   padding: 3px 8px;
 
   &:hover {
-    color: white;
+    color: black;
   }
 
   @media screen and (min-width: 426px) {
@@ -212,16 +212,16 @@ const LinkToEdit = styled(Link)`
 `;
 
 const DeleteButton = styled.button`
-  color: black;
+  color: white;
   font-size: 15px;
-  background-color: #ffbf00;
+  background-color: #e59b8a;
   border: none;
   border-radius: 20px;
   padding: 4.5px 8px;
   margin-left: 5px;
 
   &:hover {
-    color: white;
+    color: black;
     cursor: pointer;
   }
 

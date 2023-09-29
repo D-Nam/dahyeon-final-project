@@ -95,7 +95,7 @@ const SearchSongs = () => {
 export default SearchSongs;
 
 const Background = styled.div`
-  background-color: #e0ffff;
+  background-color: #dcd2cf;
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -119,7 +119,7 @@ const SearchBarDiv = styled.div`
 `;
 
 const Input = styled.input`
-  border: 3px solid #add8e6;
+  border: 3px solid #e59b8a;
   border-radius: 5px;
   width: 200px;
   height: 35px;
@@ -128,7 +128,7 @@ const Input = styled.input`
   padding-left: 10px;
 
   &:focus {
-    outline: 4px solid #e9967a;
+    outline: 4px solid white;
   }
 
   @media screen and (min-width: 426px) {
@@ -145,7 +145,7 @@ const Button = styled.button`
   width: 60px;
   border: none;
   border-radius: 20px;
-  background-color: #add8e6;
+  background-color: #e59b8a;
 
   &:hover {
     cursor: pointer;
