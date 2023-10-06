@@ -13,23 +13,20 @@ const Contact = () => {
           <p>I'd like to hear your feedback or thoughts.</p>
           <p>Please feel free to contact me :)</p>
         </Message>
-        <GmailDiv>
+
+        <IconDiv>
           <Link to='mailto:dahyeon.futuredev@gmail.com'>
             <GmailIcon size={'3rem'} />
           </Link>
-        </GmailDiv>
 
-        <GithubDiv>
           <Link to='https://github.com/D-Nam'>
             <GithubIcon size={'3rem'} />
           </Link>
-        </GithubDiv>
 
-        <LinkedInDiv>
           <Link to='https://www.linkedin.com/in/dahyeon-nam'>
             <LinkedInIcon size={'3rem'} />
           </Link>
-        </LinkedInDiv>
+        </IconDiv>
       </Container>
     </>
   );
@@ -44,46 +41,62 @@ const Container = styled.div`
 `;
 
 const Image = styled.img`
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  width: 100%;
-  opacity: 0.9;
+  display: none;
+
+  @media screen and (min-width: 426px) {
+    display: block;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    opacity: 0.9;
+  }
 `;
 
 const Message = styled.div`
   color: black;
-  font-size: 20px;
-  position: absolute;
-  top: 47%;
-  left: 44%;
-  transform: translate(-50%, -50%);
+  font-size: 15px;
+  margin-top: 200px;
+
+  @media screen and (min-width: 426px) {
+    font-size: 16px;
+    position: absolute;
+    top: 16%;
+    left: 44%;
+    transform: translate(-50%, -50%);
+  }
+
+  @media screen and (min-width: 769px) {
+    font-size: 20px;
+  }
+
+  @media screen and (min-width: 1025px) {
+    top: 22%;
+    font-size: 25px;
+  }
 `;
 
-const GmailDiv = styled.div`
-  position: absolute;
-  top: 60%;
-  left: 36%;
+const IconDiv = styled.div`
+  margin-top: 45px;
+  display: flex;
+  justify-content: center;
+  gap: 17px;
+
+  @media screen and (min-width: 426px) {
+    margin-top: 0px;
+    position: absolute;
+    top: 66%;
+    left: 44%;
+    transform: translate(-50%, -50%);
+  }
 `;
 
 const GmailIcon = styled(AiFillMail)`
   color: black;
 `;
 
-const GithubDiv = styled.div`
-  position: absolute;
-  top: 60%;
-  left: 42%;
-`;
-
 const GithubIcon = styled(BiLogoGithub)`
   color: black;
-`;
-
-const LinkedInDiv = styled.div`
-  position: absolute;
-  top: 60%;
-  left: 48%;
 `;
 
 const LinkedInIcon = styled(AiFillLinkedin)`

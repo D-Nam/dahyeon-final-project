@@ -104,6 +104,7 @@ const Image = styled.img`
 
 const SignInFormDiv = styled.div`
   border: 4px solid white;
+  border-radius: 30px;
   background: rgba(95, 88, 85, 0.94);
   display: flex;
   justify-content: center;
@@ -172,7 +173,7 @@ const Input = styled.input`
   margin-top: 18px;
 
   &:focus {
-    outline: 4px solid #e9967a;
+    outline: 4px solid #e59b8a;
   }
 
   @media screen and (min-width: 426px) {
@@ -189,7 +190,7 @@ const Button = styled.button`
   margin-top: 25px;
   border: 2px solid white;
   border-radius: 20px;
-  background-color: #add8e6;
+  background-color: #72c7d1;
 
   &:hover {
     cursor: pointer;
@@ -204,7 +205,7 @@ const Button = styled.button`
 `;
 
 const SignInMessage = styled.p`
-  margin-top: 25px;
+  margin-top: 15px;
   font-size: 17px;
   color: #e1d8d6;
 `;
@@ -212,7 +213,6 @@ const SignInMessage = styled.p`
 const LinkToSignIn = styled(Link)`
   color: white;
   margin-left: 10px;
-  text-decoration: none;
 
   &:hover {
     text-decoration: underline;

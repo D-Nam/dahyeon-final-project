@@ -67,7 +67,7 @@ const MessageDiv = styled.div`
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(95, 88, 85, 0.96);
+  background: rgba(232, 230, 230, 0.96);
   border-radius: 30px;
   padding: 50px;
 
@@ -77,9 +77,7 @@ const MessageDiv = styled.div`
 `;
 
 const Message = styled.div`
-  font-family: monospace;
-  color: #ffffff;
-  text-shadow: 3px 3px black;
+  color: black;
   position: relative;
   font-size: 20px;
   font-weight: bold;
@@ -104,17 +102,13 @@ const Message = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    font-size: 35px;
+    font-size: 20px;
   }
 `;
 
 const LinktoSearchSongs = styled(Link)`
-  color: white;
-  font-size: 20px;
-
-  &:hover {
-    color: #f08080;
-  }
+  color: #f08080;
+  font-size: 18px;
 `;
 
 const Container2 = styled.div`

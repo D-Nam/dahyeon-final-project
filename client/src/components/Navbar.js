@@ -1,13 +1,18 @@
-import { NavLink, useNavigate } from 'react-router-dom';
-import { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useState, useContext, useEffect } from 'react';
 import { UserContext } from '../context/UserContext';
 import { BiSolidUserCircle } from 'react-icons/bi';
 import { BiMenu } from 'react-icons/bi';
-
+import { AiOutlineClose } from 'react-icons/ai';
+import MenuLinkTo from './MenuLinkTo';
 import styled from 'styled-components';
 
 const Navbar = () => {
   const { signedInUser_id, setSignedInUser_id } = useContext(UserContext);
+
+  useEffect(() => {
+    console.log(signedInUser_id);
+  }, [signedInUser_id]);
   const navigate = useNavigate();
 
   const handleClick = (e) => {
@@ -17,6 +22,10 @@ const Navbar = () => {
     window.alert('Signed out successfully!');
     navigate('/');
   };
+
+  const [sidebar, setSidebar] = useState(false);
+
+  const showSidebar = () => setSidebar(!sidebar);
 
   return (
     <>
@@ -49,10 +58,9 @@ const Navbar = () => {
           <SignInDiv>
             {signedInUser_id ? (
               <GreetUser>
-                Hi, {signedInUser_id._id}
-                <NavLink to={`/myPage/${signedInUser_id._id}`}>
+                <Link to={`/myPage/${signedInUser_id._id}`}>
                   <UserIcon size={'2em'} />
-                </NavLink>
+                </Link>
                 <SignInUpOutLink to='/' onClick={handleClick}>
                   Sign out
                 </SignInUpOutLink>
@@ -64,18 +72,53 @@ const Navbar = () => {
               </AccountDiv>
             )}
           </SignInDiv>
-          <MenuBtn>
-            <MenuIcon size={'2rem'} />
-          </MenuBtn>
+
+          {!sidebar ? (
+            <MenuBtn>
+              <MenuIcon size={'2rem'} onClick={showSidebar} />
+            </MenuBtn>
+          ) : (
+            <CloseIcon size={'2rem'} onClick={showSidebar} />
+          )}
         </NavbarContainer>
       </Nav>
+
+      <SidebarNav sidebar={sidebar}>
+        <SidebarWrap>
+          <MenuLinkTo path='/' title='Home' />
+          <MenuLinkTo path='/about' title='About' />
+          <MenuLinkTo path='/searchSongs' title='Search Songs' />
+          <MenuLinkTo path='/contact' title='Contact' />
+          {signedInUser_id && (
+            <>
+              {' '}
+              <MenuLinkTo
+                path={`/myPage/${signedInUser_id._id}`}
+                title='My Page'
+              />
+              <SignOutDiv>
+                <SideBarSignOutLink to='/' onClick={handleClick}>
+                  Sign out
+                </SideBarSignOutLink>
+              </SignOutDiv>
+            </>
+          )}
+
+          {!signedInUser_id && (
+            <>
+              <MenuLinkTo path='/signIn' title='Sign In' />
+              <MenuLinkTo path='/signUp' title='Sign Up' />
+            </>
+          )}
+        </SidebarWrap>
+      </SidebarNav>
     </>
   );
 };
 
 export default Navbar;
 
-const Nav = styled.div`
+const Nav = styled.nav`
   position: fixed;
   background-color: #433e3d;
   height: 50px;
@@ -153,7 +196,7 @@ const Logo3 = styled.div`
   color: white;
 `;
 
-const LogoLink = styled(NavLink)`
+const LogoLink = styled(Link)`
   text-decoration: none;
 `;
 
@@ -167,7 +210,7 @@ const NavUl = styled.ul`
   }
 `;
 
-const NavbarLink = styled(NavLink)`
+const NavbarLink = styled(Link)`
   color: #e8dede;
   display: flex;
   align-items: center;
@@ -212,7 +255,7 @@ const AccountDiv = styled.div`
   }
 `;
 
-const SignInUpOutLink = styled(NavLink)`
+const SignInUpOutLink = styled(Link)`
   color: white;
   text-decoration: none;
   margin-left: 15px;
@@ -256,4 +299,55 @@ const MenuIcon = styled(BiMenu)`
   @media screen and (min-width: 769px) {
     display: none;
   }
+`;
+
+const SidebarNav = styled.nav`
+  background: #f3edeb;
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 50px;
+  right: ${({ sidebar }) => (sidebar ? '0' : '-100%')};
+  transition: 350ms;
+  z-index: 10;
+
+  @media screen and (min-width: 426px) {
+    top: 55px;
+  }
+
+  @media screen and (min-width: 768px) {
+    top: 70px;
+  }
+
+  @media screen and (min-width: 769px) {
+    display: none;
+  }
+`;
+
+const SidebarWrap = styled.div`
+  width: 100%;
+`;
+
+const CloseIcon = styled(AiOutlineClose)`
+  display: block;
+  color: white;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-right: 15px;
+
+  @media screen and (min-width: 769px) {
+    display: none;
+  }
+`;
+
+const SignOutDiv = styled.div`
+  margin-top: 20px;
+  margin-left: 18px;
+`;
+
+const SideBarSignOutLink = styled(Link)`
+  color: black;
 `;

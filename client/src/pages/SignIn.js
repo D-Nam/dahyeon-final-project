@@ -96,7 +96,7 @@ export default SignIn;
 
 const Background = styled.div`
   position: relative;
-  background: linear-gradient(white, #e9967a);
+  background: #dcd2cf;
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -105,6 +105,7 @@ const Background = styled.div`
 
 const SignInFormDiv = styled.div`
   border: 4px solid white;
+  border-radius: 30px;
   background: rgba(95, 88, 85, 0.8);
   display: flex;
   justify-content: center;
@@ -171,7 +172,7 @@ const Input = styled.input`
   margin-top: 18px;
 
   &:focus {
-    outline: 4px solid #e9967a;
+    outline: 4px solid #e59b8a;
   }
 
   @media screen and (min-width: 426px) {
@@ -190,7 +191,7 @@ const Button = styled.button`
   margin-bottom: 40px;
   border: 2px solid white;
   border-radius: 20px;
-  background-color: #add8e6;
+  background-color: #72c7d1;
 
   &:hover {
     cursor: pointer;
@@ -221,9 +222,8 @@ const SignUpMessage = styled.div`
 `;
 
 const LinkToSignUp = styled(Link)`
-  color: white;
+  color: #f08080;
   margin-left: 10px;
-  text-decoration: none;
 
   &:hover {
     text-decoration: underline;
